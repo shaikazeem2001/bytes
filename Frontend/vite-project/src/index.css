@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-primary: #000000;
+  --bg-secondary: #09090b;
+  --bg-card: #121215;
+  --bg-input: #18181c;
+  
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1aa;
+  --text-muted: #71717a;
+  
+  --border-color: #27272a;
+  --border-focus: #52525b;
+  
+  --accent-white: #ffffff;
+  --accent-dark: #18181b;
+  
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Base Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseSlow {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* --- LIVE ANIMATED MOVING COLOR KEYFRAMES --- */
+@keyframes cosmicPan {
+  0% {
+    transform: scale(1.1) translate(0%, 0%);
+  }
+  25% {
+    transform: scale(1.18) translate(-2%, 2%);
+  }
+  50% {
+    transform: scale(1.22) translate(2%, -2%);
+  }
+  75% {
+    transform: scale(1.15) translate(-1%, -3%);
+  }
+  100% {
+    transform: scale(1.1) translate(0%, 0%);
+  }
+}
+
+@keyframes colorNebulaFlow1 {
+  0% {
+    transform: translate(-30%, -30%) rotate(0deg) scale(1);
+    opacity: 0.7;
+  }
+  33% {
+    transform: translate(20%, -10%) rotate(120deg) scale(1.3);
+    opacity: 0.9;
+  }
+  66% {
+    transform: translate(-10%, 30%) rotate(240deg) scale(1.1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(-30%, -30%) rotate(360deg) scale(1);
+    opacity: 0.7;
+  }
+}
+
+@keyframes colorNebulaFlow2 {
+  0% {
+    transform: translate(40%, 40%) rotate(360deg) scale(1.2);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translate(-20%, -20%) rotate(180deg) scale(0.9);
+    opacity: 0.95;
+  }
+  100% {
+    transform: translate(40%, 40%) rotate(0deg) scale(1.2);
+    opacity: 0.6;
+  }
+}
+
+@keyframes waveShimmer {
+  0% {
+    transform: translateX(-100%) rotate(15deg);
+  }
+  100% {
+    transform: translateX(200%) rotate(15deg);
+  }
+}
+
+@keyframes particleDrift {
+  0% {
+    transform: translateY(0) scale(0.8);
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.9;
+    transform: translateY(-20px) scale(1.2);
+  }
+  100% {
+    transform: translateY(-40px) scale(0.8);
+    opacity: 0.3;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-float {
+  animation: floatSlow 5s ease-in-out infinite;
+}
+
+.animate-cosmic-pan {
+  animation: cosmicPan 20s ease-in-out infinite alternate;
+}
+
+.animate-nebula-1 {
+  animation: colorNebulaFlow1 14s linear infinite;
+}
+
+.animate-nebula-2 {
+  animation: colorNebulaFlow2 18s ease-in-out infinite;
+}
+
+.animate-shimmer-sweep {
+  animation: waveShimmer 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}

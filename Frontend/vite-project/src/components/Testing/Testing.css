@@ -1,0 +1,21 @@
+.card-ui{
+    border: 2px solid white;
+    padding: 20px 20px 20px 20px;
+    color: white;
+}
+.btn{
+    background-color: greenyellow;
+
+}
+
+.edit-btn{
+    background-color: yellow;
+}
+
+.del-btn{
+    background-color: red;
+}
+
+.save-btn{
+    background-color: greenyellow;
+}
